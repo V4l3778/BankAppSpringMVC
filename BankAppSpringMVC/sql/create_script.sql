@@ -23,14 +23,14 @@ create table Transazione (
 	id_destinaz int,
 	data date not null,
 	importo double not null,
-	tipo varchar not null,
+	tipo varchar (30) not null,
 	constraint p_idtra primary key(id_transazione),
-	constraint f_idsor foreign key(id_conto) references Conto(id_conto),
-	constraint f_iddes foreign key(id_conto) references Conto(id_conto)
+	constraint f_idsor foreign key(id_transazione) references Conto(id_conto),
+	constraint f_iddes foreign key(id_sorgente) references Conto(id_conto)
 );
 
 create table Ruolo (
 	id_ruolo int auto_increment,
-	descrizione varchar not null,
+	descrizione varchar (30) not null,
 	constraint p_idruo primary key(id_ruolo)
 );
