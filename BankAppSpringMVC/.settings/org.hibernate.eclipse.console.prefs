@@ -1,0 +1,3 @@
+default.configuration=BankAppSpringMVC
+eclipse.preferences.version=1
+hibernate3.enabled=true
