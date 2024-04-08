@@ -14,7 +14,7 @@ create table Conto (
 	saldo double not null,
 	apertura date not null,
 	constraint p_idcon primary key(id_conto),
-	constraint f_idcli foreign key(id_cliente)
+	constraint f_idcli foreign key(id_cliente) references Cliente(id_cliente)
 );
 
 create table Transazione (
@@ -25,8 +25,8 @@ create table Transazione (
 	importo double not null,
 	tipo varchar not null,
 	constraint p_idtra primary key(id_transazione),
-	constraint f_idsor foreign key(id_conto),
-	constraint f_iddes foreign key(id_conto)
+	constraint f_idsor foreign key(id_conto) references Conto(id_conto),
+	constraint f_iddes foreign key(id_conto) references Conto(id_conto)
 );
 
 create table Ruolo (
