@@ -1,4 +1,4 @@
-package com.tasgroup.bankapp.model;
+package com.tasgroup.bankapp.businesscomponent.model;
 
 import java.io.Serializable;
 
