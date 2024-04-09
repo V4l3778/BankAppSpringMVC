@@ -25,7 +25,7 @@ public interface DAOConstants {
 	
 //=====================================================================================================
 			
-	String INSERT_RUOLO= "Insert into Ruolo values(id_ruolo.next_val,descrizione)";
+	String INSERT_RUOLO= "Insert into Ruolo values(id_ruolo.next_val,?)";
 	String UPDATE_RUOLO= "Update Ruolo set descrizione= ? where id_ruolo= ?";
 	String DELETE_RUOLO= "Delete Ruolo where id_ruolo= ?";
 }
