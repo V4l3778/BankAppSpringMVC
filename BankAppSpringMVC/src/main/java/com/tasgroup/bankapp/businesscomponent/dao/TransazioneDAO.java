@@ -1,5 +1,10 @@
 package com.tasgroup.bankapp.businesscomponent.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.tasgroup.bankapp.businesscomponent.model.Transazione;
+
 public class TransazioneDAO implements DAOConstants{
 	private JdbcTemplate jdbct;
 	
@@ -8,13 +13,13 @@ public class TransazioneDAO implements DAOConstants{
 		this.jdbct= jdbct;
 	}
 	
-	public int createTansazioneSorg(Transazione t) {
-		return jdbct.update(INSERT_TRANSAZIONE,
+	public int createDepPrel(Transazione t) {
+		return jdbct.update(INSERT_T_DEP_PREL,
 				new Object[] {t.getId_sorgente(), t.getTransazDT(), t.getImporto(), t.getTipo()});
 	}
 	
-	public int createTransazione(Transazione t) {
-		return jdbct.update(INSERT_TRANSAZIONE,
+	public int createTrasferimento(Transazione t) {
+		return jdbct.update(INSERT_TRASFERIMENTO,
 				new Object[] {t.getId_sorgente(), t.getId_destinaz(), t.getTransazDT(), t.getImporto(), t.getTipo()});
 	}
 	

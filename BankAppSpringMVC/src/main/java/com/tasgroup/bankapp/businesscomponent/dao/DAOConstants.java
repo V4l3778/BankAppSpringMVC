@@ -18,9 +18,9 @@ public interface DAOConstants {
 	
 //=====================================================================================================
 	
-	String INSERT_TRANSAZIONE_SORG= "Insert into Transazione(id_transazione,id_sorgente,data,importo,tipo) "
+	String INSERT_T_DEP_PREL= "Insert into Transazione(id_transazione,id_sorgente,data,importo,tipo) "
 			+ "values(id_transazione.next_val,?,?,?,?";
-	String INSERT_TRANSAZIONE= "Insert into Transazione values(id_transazione.next_val,?,?,?,?,?";
+	String INSERT_TRASFERIMENTO= "Insert into Transazione values(id_transazione.next_val,?,?,?,?,?";
 	String DELETE_TRANSAZIONE= "Delete Transazione where id_transazione= ?";
 	
 //=====================================================================================================

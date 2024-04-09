@@ -1,6 +1,9 @@
 package com.tasgroup.bankapp.businesscomponent.dao;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.tasgroup.bankapp.businesscomponent.model.Ruolo;
 
 public class RuoloDAO implements DAOConstants{
 	private JdbcTemplate jdbct;
@@ -10,18 +13,17 @@ public class RuoloDAO implements DAOConstants{
 		this.jdbct= jdbct;
 	}
 	
-	public int create(Rurolo r) {
+	public int create(Ruolo r) {
 		return jdbct.update(INSERT_RUOLO,
-				new Object[] {r.getDescrizione()});
+				new Object[] {r.getRuolo()});
 	}
 	
-	public int update(Rurolo r) {
+	public int update(Ruolo r) {
 		return jdbct.update(UPDATE_RUOLO,
-				new Object[] {r.getDescrizione()});
+				new Object[] {r.getRuolo()});
 	}
 	
 	public int delete(long id) {
 		return jdbct.update(DELETE_RUOLO, new Object[] {id});
 	}
-	
 }
