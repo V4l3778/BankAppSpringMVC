@@ -48,7 +48,7 @@ public class ContoDAO implements DAOConstants {
 		});
 	}
 	
-	public List<Conto> findAll() {
+	public List<Conto> getAll() {
 		return jdbct.query(SELECT_CONTI, new RowMapper<Conto>() {
 			@Override
 			public Conto mapRow(ResultSet rs, int rigaCorr)
