@@ -25,13 +25,13 @@ public class ClienteController {
 	@RequestMapping("/clienteForm")
 	public String visualizzaForm(Model m) {
 		m.addAttribute("cliente", new Cliente());
-		return "paginaclienteform";
+		return "clienteFormPage";
 	}
 	
-	@RequestMapping(value="/salva", method= RequestMethod.POST)
+	@RequestMapping(value="/salvaCliente", method= RequestMethod.POST)
 	public ModelAndView createCliente(@Valid @ModelAttribute("cliente") Cliente cliente, BindingResult br) {
 		if(br.hasErrors()) {
-			return new ModelAndView("paginaclienteform","command",cliente);
+			return new ModelAndView("clienteFormPage","command",cliente);
 		} else {
 			cDAO.create(cliente);
 			return new ModelAndView("redirect:/clienteReport");
@@ -41,13 +41,13 @@ public class ClienteController {
 	@RequestMapping("/clienteReport")
 	public ModelAndView visualizzaClienti() {
 		List<Cliente> listaClienti= cDAO.getAll();
-		return new ModelAndView("paginaClientiReport","listaClienti",listaClienti);
+		return new ModelAndView("clientiReportPage","listaClienti",listaClienti);
 	}
 	
 	@RequestMapping("trovaCliente/{id}")
-	public ModelAndView recuperaCliente(@PathVariable long id) {
+	public ModelAndView trovaCliente(@PathVariable long id) {
 		Cliente cliente= cDAO.findById(id);
-		return new ModelAndView("paginaModifica","command",cliente);
+		return new ModelAndView("trovaClientePage","command",cliente);
 	}
 	
 	@RequestMapping(value= "/modifica", method= RequestMethod.POST)
